@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "New Amsterdam", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #928f8f;
+}
+
+.wrapper{
+    height:340px;
+    width: 500px;
+    background: #fff;
+    -webkit-box-shadow: inset 13px 26px 18px -9px rgba(0,0,0,0.41);
+-moz-box-shadow: inset 13px 26px 18px -9px rgba(0,0,0,0.41);
+box-shadow: inset 13px 26px 18px -9px rgba(0,0,0,0.41);
+ position: relative;
+ overflow: hidden;
+}
+
+
+.wrapper .images{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border: 7px solid #fff;
+    
+}
+
+
+
+.wrapper .images .img-1{
+    height: 100%;
+    width: 100%;
+    background: url(../assets/wp-2023-12-03-bwcv2-photo-bw-1.webp) no-repeat;
+    object-fit: contain;
+}
+
+.wrapper .images .img-2{
+    height: 100%;
+    width: 50%;
+    /* filter: blur(5px); */
+    background: url(../assets/wp-2023-12-05-bwcv2-photo-adjust-1.webp) no-repeat;
+    object-fit: contain;
+    position: absolute;
+}
+
+.wrapper .slider{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+
+.wrapper .slider input{
+    width: 100%;
+    outline: none;
+    background: none;
+    -webkit-appearance: none;
+}
+
+
+.slider input::-webkit-slider-thumb{
+    height: 400px;
+    width: 3px;
+    background:none;
+    -webkit-appearance: none;
+    cursor: col-resize;
+}
+
+ .drag-line{
+    height: 333px;
+    width: 3px;
+    position: absolute;
+    /* background: red; */
+    left: 49.86%;
+    pointer-events: none;
+}
+
+
+.drag-line::before,
+.drag-line::after{
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 222px;
+  background: rgb(255, 253, 253);
+}
+
+
+.drag-line::before{
+  top: 0;
+}
+
+
+
+.drag-line::after{
+    bottom: 0;
+}
+
+
+.drag-line span{
+    width: 30px;
+    height: 30px;
+    border: 3px solid #df0000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.drag-line span::before,
+.drag-line span::after{
+    position: absolute;
+    content: "";
+    top: 50%;
+    border: 10px solid transparent;
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+    transform: translate(-50%,-50%) rotate(45deg);
+}
+
+.drag-line span::before{
+    border-left-color: #df0000;
+    left: 40%;
+}
+
+.drag-line span::after{
+    border-top-color: #df0000;
+    left: 60%;
+}
